@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <title>管理后台 · KK AI Hub</title>
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/app.css" />
+  <link rel="stylesheet" href="/css/admin.css" />
+</head>
+<body>
+  <div id="watermark" class="watermark"></div>
+  <div class="admin hidden" id="admin">
+    <aside class="side">
+      <a class="side-brand" href="#/dashboard"><img src="/assets/kk-rabbit-app.png" alt="" /><div>KK <span>AI Hub</span><small>管理后台</small></div></a>
+      <nav id="sideNav" aria-label="后台导航"></nav>
+      <div class="side-foot" id="sideFoot"></div>
+    </aside>
+    <div class="main">
+      <div class="main-top">
+        <button class="btn sm ghost menu-toggle" id="menuToggle" aria-label="展开导航">☰</button>
+        <div class="crumb" id="crumb"></div>
+        <div class="right"><span class="session-pill" id="sessionPill"></span><div id="userMenu"></div></div>
+      </div>
+      <main class="content" id="view"></main>
+    </div>
+  </div>
+  <script type="module" src="/js/admin.js"></script>
+</body>
+</html>

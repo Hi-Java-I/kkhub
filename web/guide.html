@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <title>KK AI Hub 资源 BI 看板 · 使用说明</title>
+<style>
+  :root { --ink:#0f2147; --sub:#40507a; --muted:#6a7b9c; --line:#e3ecfa; --blue:#2f6bf0; --soft:#eef4ff; --mint:#e6faf5; --warn:#fff6e6; }
+  * { box-sizing: border-box; }
+  body { margin: 0; font: 15px/1.8 -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif; color: var(--ink); background: #f3f7fe; }
+  header { background: linear-gradient(120deg, #5b5ff0, #3f86f2 42%, #22c1dc 78%, #4fe3cf); color: #fff; padding: 34px 20px 30px; }
+  header .in, main { max-width: 960px; margin: 0 auto; }
+  header h1 { margin: 0 0 6px; font-size: 26px; }
+  header p { margin: 0; opacity: .92; font-size: 14px; }
+  nav.toc { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 14px 20px; margin: 20px 0; }
+  nav.toc b { display: block; margin-bottom: 4px; }
+  nav.toc a { color: var(--blue); text-decoration: none; margin-right: 16px; font-size: 14px; white-space: nowrap; }
+  section { background: #fff; border: 1px solid var(--line); border-radius: 14px; padding: 20px 26px; margin-bottom: 18px; }
+  h2 { font-size: 19px; margin: 0 0 10px; padding-left: 10px; border-left: 4px solid var(--blue); }
+  h3 { font-size: 16px; margin: 18px 0 6px; }
+  ol, ul { padding-left: 22px; margin: 6px 0; }
+  li { margin: 3px 0; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; margin: 8px 0; }
+  th, td { border: 1px solid var(--line); padding: 7px 10px; text-align: left; vertical-align: top; }
+  th { background: #f6f9ff; color: var(--sub); }
+  .tip { background: var(--soft); border-left: 4px solid var(--blue); padding: 8px 14px; border-radius: 0 10px 10px 0; margin: 10px 0; font-size: 14px; }
+  .tip.ok { background: var(--mint); border-color: #1baf7a; }
+  .tip.warn { background: var(--warn); border-color: #eda100; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 700; padding: 0 8px; border-radius: 10px; }
+  .t-user { background: #eaf7ff; color: #127fa6; } .t-admin { background: #f0edff; color: #5a4bd6; }
+  .b-ok { background: #e8f0ff; color: #2f6bf0; } .b-tight { background: #fdecec; color: #c53b3e; } .b-red { background: #e6faf5; color: #0f9f8f; }
+  code { background: #f1f5fd; border: 1px solid var(--line); border-radius: 5px; padding: 0 5px; font-size: 13px; }
+  footer { text-align: center; color: var(--muted); font-size: 12px; padding: 10px 0 30px; }
+  @media print { body { background: #fff; } nav.toc { display: none; } section { break-inside: avoid; border-color: #ddd; } header { -webkit-print-color-adjust: exact; print-color-adjust: exact; } }
+</style>
+</head>
+<body>
+<header><div class="in">
+  <h1>KK AI Hub 资源 BI 看板 · 使用说明</h1>
+  <p>面向公司内部商务 / 销售同事。</p>
+</div></header>
+<main>
+
+<nav class="toc">
+  <b>目录</b>
+  <a href="#s1">一、系统简介</a><a href="#s2">二、登录与安全</a><a href="#s3">三、普通用户操作</a>
+  <a href="#sfb">四、BD有话说</a><a href="#s5">五、名词与状态说明</a><a href="#s6">六、常见问题</a>
+</nav>
+
+<section id="s1">
+  <h2>一、系统简介</h2>
+  <p>本系统用于<b>商机提交与资源匹配</b>：销售同事提交客户需求（商机），系统根据各分组的资源档位，自动返回「资源是否充足」以及对应分组的资源与服务质量情况。</p>
+  <table>
+    <tr><th style="width:120px">角色</th><th>能做什么</th></tr>
+    <tr><td><span class="tag t-user">普通用户</span></td><td>下载方案资料、查看线路说明、提交 / 编辑自己的商机、查看匹配结果、查看分组信息（只读）</td></tr>
+  </table>
+  <div class="tip">访问地址：<b>http://kkaihub.northsea.site:5002</b>（建议使用 Chrome 或 Edge 浏览器）。</div>
+</section>
+
+<section id="s2">
+  <h2>二、登录与安全</h2>
+  <ol>
+    <li>账号由管理员统一开通，<b>不支持自行注册</b>。拿到用户名和初始密码后，在登录页输入即可。</li>
+    <li><b>无操作自动退出</b>：一段时间不操作（默认 10 分钟）会自动退出，到点前会弹窗提醒，点「继续停留」可延长。</li>
+    <li><b>忘记密码</b>：普通用户不能自行修改密码，请联系管理员重置。</li>
+    <li>同一账号连续输错密码 10 次会被锁定 15 分钟。</li>
+  </ol>
+  <div class="tip warn">本系统内容仅限公司内部使用：页面带有姓名和时间水印，<b>禁止截图、录屏、复制外传</b>，操作会被记录。账号请勿转借他人。</div>
+</section>
+
+<section id="s3">
+  <h2>三、普通用户操作 <span class="tag t-user">普通用户</span></h2>
+
+  <h3>1. 下载方案资料</h3>
+  <p>页面最上方点击「《快快AIHub-企业LLM统一接入解决方案》点击下载」，即可下载方案 PPT，用于给客户介绍。</p>
+
+  <h3>2. 线路说明</h3>
+  <table>
+    <tr><th>线路</th><th>适用场景</th><th>超时时间</th></tr>
+    <tr><td><code>https://ai-api.kkidc.com</code></td><td>用户在国内接入</td><td>900s</td></tr>
+    <tr><td><code>https://api.ai.kkidc.com</code></td><td>用户在国外 / 香港接入</td><td>1800s</td></tr>
+  </table>
+  <p>每张线路卡片上有「复制地址」按钮，可直接复制给客户。</p>
+
+  <h3>3. 资源冗余推荐</h3>
+  <p>如果页面出现绿色的「<b>资源冗余，可尽快挖掘商机</b>」板块，说明其中列出的分组资源量充裕（TPM 3000w 以上），可以优先向客户推荐这些分组对应的模型。</p>
+
+  <h3>4. 提交商机</h3>
+  <ol>
+    <li>点击欢迎横幅上的「+ 提交商机」，或商机清单右上角的「+ 新增商机」。</li>
+    <li>按下表填写后点「保存」：</li>
+  </ol>
+  <table>
+    <tr><th style="width:130px">字段</th><th>填写说明</th></tr>
+    <tr><td>客户名称 *</td><td>客户或项目名称</td></tr>
+    <tr><td>场景 *</td><td>coding 场景 / 蒸馏场景</td></tr>
+    <tr><td>需求模型厂商 *</td><td>从列表中选择；列表里没有的选「其他」后手动填写</td></tr>
+    <tr><td>需求模型ID *</td><td><b>可多选</b>：选择厂商后列出该厂商的模型，勾选需要的模型（可「全选」/「清空」）；列表里没有的，在下方「其他」里填写，多个用逗号分隔。选了多个模型时，TPM / RPM 需求按所选模型平均分摊来判断资源是否充足</td></tr>
+    <tr><td>TPM / RPM 需求量 *</td><td>可<b>直接选择档位</b>（TPM：500w-1000w / 1000w-2000w / 2000w-3000w / 3000w-5000w / 5000w以上；RPM：500-1000 … 5000以上，w = 万），也可选「手动填写」输入具体数值</td></tr>
+    <tr><td>预计上量时间 *</td><td>1天内 / 3天内</td></tr>
+    <tr><td>填写日期 *</td><td>默认当天，可修改</td></tr>
+    <tr><td>需求背景</td><td>客户需求背景、场景等补充说明（选填）</td></tr>
+  </table>
+
+  <h3>5. 查看匹配结果</h3>
+  <p>保存后会自动弹出「商机匹配结果」，并<b>自动保留</b>；之后随时可在商机清单中点「查看匹配结果」（显示最后一次编辑后的结果）。结果包括：</p>
+  <ul>
+    <li><b>资源情况</b>：资源充足 / 资源紧张 / 资源冗余，含义见第五部分。</li>
+    <li><b>对应分组及资源档位</b>：需求模型所在的各个分组，以及各分组的 TPM / RPM 档位、缓存命中率、TTFT（P50）、有效成功率。</li>
+    <li><b>对应分组实际情况折线图</b>：最近 24 小时每小时的缓存命中率、TTFT（P50）、有效成功率；点击图上方的分组名可显示 / 隐藏该分组。</li>
+  </ul>
+  <div class="tip warn">折线图数据<b>仅供参考</b>，向客户承诺前推荐让客户接入实测。</div>
+
+  <h3>6. 编辑 / 删除商机</h3>
+  <p>商机清单只显示自己提交的商机，每行可「编辑」或「删除」。列表每页 5 条，底部可翻页。</p>
+
+  <h3>7. 查看分组信息</h3>
+  <p>「分组信息」表列出所有模型厂商、分组、模型ID、资源来源、分组说明和参数说明；可用上方「筛选」按模型厂商、分组快速查找。</p>
+
+</section>
+
+<section id="sfb">
+  <h2>四、BD有话说</h2>
+  <p>「BD有话说」是商务同事向公司反馈一线信息的渠道，方便资源和产品同事及时了解客户与市场情况。</p>
+  <h3>可以说什么</h3>
+  <table>
+    <tr><th style="width:120px">类型</th><th>适合填写的内容（举例）</th></tr>
+    <tr><td>需求反馈</td><td>客户想要的模型、用量、时间要求、对延迟 / 稳定性的要求等</td></tr>
+    <tr><td>行业了解</td><td>行业动态、竞品价格与做法、客户所在行业的典型场景</td></tr>
+    <tr><td>资源了解</td><td>听到的资源渠道、价格变化、供应情况等</td></tr>
+  </table>
+  <h3>怎么提交</h3>
+  <ol>
+    <li>点欢迎横幅上的「💬 BD有话说」，或页面「BD有话说」板块右上角的「💬 我要说」（顶部导航也可直接跳到该板块）。</li>
+    <li>选择类型，填写内容（最多 2000 字），点「提交」。</li>
+    <li>提交后可在「BD有话说」列表看到，列表只显示<b>自己提交的</b>内容，每页 5 条，可删除自己的内容。</li>
+  </ol>
+  <div class="tip">建议写清楚：客户 / 行业、具体需求或信息、时间、信息来源，便于后续跟进。</div>
+</section>
+
+<section id="s5">
+  <h2>五、名词与状态说明</h2>
+  <table>
+    <tr><th style="width:150px">名词</th><th>说明</th></tr>
+    <tr><td>TPM / RPM</td><td>每分钟 Token 数 / 每分钟请求数；w = 万（如 1000w = 1000 万）</td></tr>
+    <tr><td>缓存命中率</td><td>请求命中缓存的比例，越高越省成本、响应越快</td></tr>
+    <tr><td>TTFT（P50）</td><td>首字延迟的 P50（中位数）：从发出请求到收到第一个字的时间，一半的请求不超过这个值，越低越好</td></tr>
+    <tr><td>有效成功率</td><td>请求成功返回的比例</td></tr>
+  </table>
+  <table>
+    <tr><th style="width:150px">商机资源情况</th><th>含义与建议</th></tr>
+    <tr><td><span class="tag b-ok">资源充足</span></td><td>需求在对应分组的资源档位范围内，可正常推进；后台会根据需求进行资源统计及扩容</td></tr>
+    <tr><td><span class="tag b-tight">资源紧张</span></td><td>需求超过对应分组的资源档位，推进前请先与资源负责人确认可承接量</td></tr>
+    <tr><td><span class="tag b-red">资源冗余</span></td><td>资源充裕，可优先推进、尽快上量</td></tr>
+  </table>
+</section>
+
+<section id="s6">
+  <h2>六、常见问题</h2>
+  <h3>页面没显示最新内容？</h3>
+  <p>按 <code>Ctrl + F5</code> 强制刷新后重新登录。</p>
+  <h3>提示「登录已超时」？</h3>
+  <p>长时间未操作被自动退出，重新登录即可。</p>
+  <h3>需求模型ID 下拉里找不到想要的模型？</h3>
+  <p>选「其他」手动填写；同时可联系管理员在分组信息中补充该模型。</p>
+  <h3>匹配结果折线图显示「暂未填写」？</h3>
+  <p>说明对应分组还没录入服务质量指标，请联系管理员在资源清单中填写。</p>
+  <h3>遇到其他问题？</h3>
+  <p>请联系系统管理员。</p>
+</section>
+
+</main>
+<footer>KK AI Hub 资源 BI 看板 · 内部使用 · 如需打印或保存为 PDF，可使用浏览器「打印」功能</footer>
+</body>
+</html>

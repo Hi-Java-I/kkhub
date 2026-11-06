@@ -1,0 +1,11 @@
+# 只运行预构建镜像（服务器不构建）；变量来自 release.env
+services:
+  app:
+    image: ${APP_IMAGE}
+    container_name: kk-ai-hub-bi
+    restart: unless-stopped
+    env_file: ./app.env          # KK_SECRET 等，只在服务器上
+    ports:
+      - "${BIND_ADDR:-0.0.0.0}:${HOST_PORT:-5002}:3000"
+    volumes:
+      - ./data:/app/data         # db.json 挂载宿主机，升级不丢数据

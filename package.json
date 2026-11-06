@@ -1,0 +1,13 @@
+{
+  "name": "kk-ai-hub-bi",
+  "version": "2.0.0",
+  "description": "KK AI Hub 资源看板（前后端分离：server/ 纯 API + web/ 静态前端）",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "start:api": "SERVE_WEB=0 node server.js",
+    "check": "node -e \"require('./server/http');require('./server/services/sync')\" && for f in web/js/*.js; do node --check --input-type=module < $f || exit 1; done"
+  },
+  "engines": { "node": ">=16" },
+  "private": true
+}

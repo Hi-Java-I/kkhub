@@ -1,0 +1,14 @@
+# 运行数据：含用户密码哈希、会话、登录 IP、内部方案文件，绝不能上传
+data/
+*.tmp
+# 旧版代码备份
+_backup_v1/
+# 环境变量 / 密钥
+.env
+*.env
+app.env
+release.env
+# 依赖与系统文件
+node_modules/
+.DS_Store
+Thumbs.db

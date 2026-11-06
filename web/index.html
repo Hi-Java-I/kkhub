@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/assets/favicon-64.png" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+  <title>KK AI Hub · 资源看板</title>
+  <link rel="stylesheet" href="/css/base.css" />
+  <link rel="stylesheet" href="/css/app.css" />
+</head>
+<body>
+  <div id="watermark" class="watermark"></div>
+
+  <!-- 登录 -->
+  <div id="login" class="login hidden">
+    <div class="login-art" aria-hidden="true">
+      <div class="orbit o1"></div><div class="orbit o2"></div>
+      <img class="login-rabbit" src="/assets/kk-rabbit.png" alt="" />
+      <div class="slogan"><b>快快 AI Hub</b><span>企业大模型资源，一站匹配</span></div>
+    </div>
+    <div class="login-side">
+      <div class="login-card">
+        <div class="logo">KK <span>AI Hub</span></div>
+        <div class="tag">资源看板 · 商机资源匹配</div>
+        <form id="loginForm" novalidate>
+          <label class="field"><span class="label">用户名</span><input class="input" id="lgUser" autocomplete="username" placeholder="请输入用户名" required /></label>
+          <label class="field"><span class="label">密码</span><input class="input" id="lgPwd" type="password" autocomplete="current-password" placeholder="请输入密码" required /></label>
+          <div class="login-err" id="loginErr" role="alert"></div>
+          <button class="btn primary lg" type="submit">登录</button>
+        </form>
+        <div class="login-foot" id="loginFoot"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 主界面 -->
+  <div id="app" class="hidden">
+    <header class="top">
+      <a class="brand" href="#/home"><img src="/assets/kk-rabbit-app.png" alt="" /><div>KK <span>AI Hub</span><small>资源看板</small></div></a>
+      <nav class="tabs" id="tabs" aria-label="主导航"></nav>
+      <div class="top-right">
+        <span class="session-pill" id="sessionPill"></span>
+        <a class="btn sm hidden" id="adminLink" href="/admin"></a>
+        <div id="userMenu"></div>
+      </div>
+    </header>
+    <main class="page" id="view"></main>
+  </div>
+
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
